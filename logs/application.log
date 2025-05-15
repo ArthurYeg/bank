@@ -1,0 +1,42 @@
+2025-05-15 11:13:38.237 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 11128 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 11:13:38.244 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 11:13:38.246 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 11:13:40.243 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'jwtAuthFilter' defined in class path resource [com/example/test/bank/config/FilterConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfig; factoryMethodName=jwtAuthFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/example/test/bank/config/FilterConfig.class]] for bean 'jwtAuthFilter' since there is already [Generic bean: class [com.example.test.bank.security.JwtAuthFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in file [C:\Users\Asus TUF\IdeaProjects\bank\target\classes\com\example\test\bank\security\JwtAuthFilter.class]] bound.
+2025-05-15 11:13:40.256 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 11:13:40.290 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'jwtAuthFilter', defined in class path resource [com/example/test/bank/config/FilterConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Users\Asus TUF\IdeaProjects\bank\target\classes\com\example\test\bank\security\JwtAuthFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2025-05-15 14:51:52.211 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 50600 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 14:51:52.213 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 14:51:52.214 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 14:51:53.325 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'jwtAuthFilter' defined in class path resource [com/example/test/bank/config/FilterConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfig; factoryMethodName=jwtAuthFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/example/test/bank/config/FilterConfig.class]] for bean 'jwtAuthFilter' since there is already [Generic bean: class [com.example.test.bank.security.JwtAuthFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in file [C:\Users\Asus TUF\IdeaProjects\bank\target\classes\com\example\test\bank\security\JwtAuthFilter.class]] bound.
+2025-05-15 14:51:53.341 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 14:51:53.374 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'jwtAuthFilter', defined in class path resource [com/example/test/bank/config/FilterConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Users\Asus TUF\IdeaProjects\bank\target\classes\com\example\test\bank\security\JwtAuthFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+

@@ -1,0 +1,77 @@
+server:
+  port: 8093
+  servlet:
+    context-path: /api/transfer
+  shutdown: graceful
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test_bank_db
+    username: postgres
+    password: ${DB_PASSWORD:Arthur010279+}
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: transfer-app-group
+  security:
+    user:
+      name: testuser
+      password: testpass
+      roles: USER
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka/}
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+    app-name: ${spring.application.name}
+    hostname: ${HOSTNAME:localhost}
+    prefer-ip-address: true
+    ip-address: ${IP_ADDRESS:127.0.0.1}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+    status-page-url-path: ${management.endpoints.web.base-path}/info
+    health-check-url-path: ${management.endpoints.web.base-path}/health
+    metadata-map:
+      zone: ${ZONE:default}
+      profile: ${spring.profiles.active}
+      version: ${APP_VERSION:1.0.0}
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.your.package: DEBUG
+  file:
+    name: /var/log/${spring.application.name}/application.log
+    max-size: 50MB
+    max-history: 30
+    total-size-cap: 1GB
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%thread]) %clr(%-5level) %clr(%logger{36}){cyan} - %clr(%msg%n){green}"
+
+app:
+  kafka:
+    topics:
+      account: transfer.account
+      card: transfer.card
+      phone: transfer.phone
+      audit: audit.log
+  transfer:
+    max-amount: 1000000.00
+    default-currency: RUB
+    retry:
+      max-attempts: 3
+      backoff-delay: 1000
