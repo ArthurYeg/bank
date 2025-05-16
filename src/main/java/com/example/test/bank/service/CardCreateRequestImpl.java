@@ -1,7 +1,10 @@
 package com.example.test.bank.service;
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 
+@Service
 public class CardCreateRequestImpl implements CardCreateRequest {
     private String cardholderName;
     private String cardNumber;

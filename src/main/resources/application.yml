@@ -13,7 +13,7 @@ spring:
       connection-timeout: 30000
   jpa:
     hibernate:
-      ddl-auto: validate  # Change to 'update' or 'create' as needed
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
@@ -21,68 +21,17 @@ spring:
         format_sql: true
   liquibase:
     enabled: true
-    change-log: classpath:db/changelog/db.changelog-master.yaml
+    change-log: classpath:db/changelog/db.changelog-master.xml
     default-schema: transfer
-    liquibase-schema: transfer
-    liquibase-tablespace: pg_default
-    database-change-log-table: DATABASECHANGELOG
-    database-change-log-lock-table: DATABASECHANGELOGLOCK
-    contexts: ${LIQUIBASE_CONTEXTS:dev}
-    label-filter: "!prod"  # Ensure this meets your requirements
-    drop-first: false
-    rollback-file: /var/liquibase/rollback.sql
     parameters:
       appSchema: transfer
     test-rollback-on-update: true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics
-  endpoint:
-    health:
-      show-details: always
-      probes:
-        enabled: true
-
 server:
-  port: ${SERVER_PORT:8093}
+  port: 8093
   servlet:
-    context-path: /api
+    context-path: /api/transfer
   shutdown: graceful
   error:
     include-message: always
     include-binding-errors: always
-  ssl:
-    enabled: ${SSL_ENABLED:false}
-
-logging:
-  level:
-    root: INFO
-    org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    com.example.test.bank: DEBUG
-  file:
-    name: logs/application.log  # Ensure the directory exists
-    max-size: 10MB
-    max-history: 7
-  pattern:
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
-    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%thread]) %clr(%-5level) %clr(%logger{36}){cyan} - %clr(%msg%n){green}"
-
-security:
-  oauth2:
-    resourceserver:
-      jwt:
-        issuer-uri: ${JWT_ISSUER_URI:}
-        jwk-set-uri: ${JWK_SET_URI:}
-
-app:
-  encryption:
-    secret-key: ${ENCRYPTION_SECRET:}
-    algorithm: AES/CBC/PKCS5Padding
-  jwt:
-    secret: ${JWT_SECRET:}
-    access-token-expiration: 86400000

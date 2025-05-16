@@ -1,65 +1,30 @@
 package com.example.test.bank.model;
 
+import jakarta.persistence.*;
+import lombok.Data;
 import java.math.BigDecimal;
 
+@Data
+@Entity
 public class Card {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    private User user;
+
+    @Column(name = "card_holder_name")
     private String cardHolderName;
+
+    @Column(name = "card_number")
     private String cardNumber;
-    private String expiryDate;
-    private BigDecimal balance; // Убедитесь, что это BigDecimal
+
+    @Column(name = "balance")
+    private BigDecimal balance;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", columnDefinition = "VARCHAR(255)")
     private CardStatus status;
 
-    // Геттеры и сеттеры
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCardHolderName() {
-        return cardHolderName;
-    }
-
-    public void setCardHolderName(String cardHolderName) {
-        this.cardHolderName = cardHolderName;
-    }
-
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getExpiryDate() {
-        return expiryDate;
-    }
-
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = expiryDate;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
-    public CardStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(CardStatus status) {
-        this.status = status;
-    }
-
-    public User getUser() {
-            return null;
-    }
 }

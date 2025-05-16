@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+
 class CardSpecificationsTest {
 
     @Test
@@ -72,47 +73,36 @@ class CardSpecificationsTest {
             assertEquals("Owner cannot be null or empty", thrown.getMessage());
         }
     }
+
     @Test
     public void testWithOwnerAndStatus() {
-
         String owner = "owner1";
         String status = "active";
-        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl();
+        String someValue = "ваше значение"; // Замените на нужное значение
+
+        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl(someValue);
 
         Specification<Card> spec = cardSpecifications.withOwnerAndStatus(owner, status);
-
         assertNotNull(spec);
-
     }
+
     @Test
     public void testCreatedBefore() {
-
         LocalDate date = LocalDate.of(2023, 1, 1);
-        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl();
+        String someValue = "ваше значение"; // Замените на нужное значение
+        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl(someValue);
 
         Specification<Card> spec = cardSpecifications.createdBefore(date);
-
         assertNotNull(spec);
-
     }
 
     @Test
     public void testCreatedAfter() {
-
         LocalDate date = LocalDate.of(2023, 1, 1);
-        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl();
+        String someValue = "ваше значение"; // Замените на нужное значение
+        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl(someValue);
 
         Specification<Card> spec = cardSpecifications.createdAfter(date);
-
         assertNotNull(spec);
-
     }
-    @Test
-    public void testCardSpecificationsImplConstructor() {
-
-        CardSpecificationsImpl cardSpecifications = new CardSpecificationsImpl();
-
-        assertNotNull(cardSpecifications);
-    }
-
 }

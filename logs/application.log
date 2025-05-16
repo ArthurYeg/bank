@@ -40,3 +40,1535 @@ Action:
 
 Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
 
+2025-05-15 15:25:11.911 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 50372 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 15:25:11.913 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 15:25:11.913 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 15:25:12.731 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 15:25:12.785 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-05-15 15:25:13.781 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 15:25:13.792 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 15:25:13.792 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 15:25:13.907 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 15:25:13.908 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1917 ms
+2025-05-15 15:25:14.192 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 15:25:14.523 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@668a32a4
+2025-05-15 15:25:14.525 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 15:25:14.638 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Unable to generate rollback file.
+2025-05-15 15:25:14.638 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 15:25:14.724 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 15:25:14.726 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 15:25:14.745 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 15:25:14.767 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Unable to generate rollback file.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: Unable to generate rollback file.
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:309)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: \var\liquibase\rollback.sql
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:298)
+	... 21 common frames omitted
+2025-05-15 15:30:24.860 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 22316 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 15:30:24.863 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 15:30:24.864 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 15:30:26.331 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 15:30:26.401 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2025-05-15 15:30:27.423 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 15:30:27.434 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 15:30:27.434 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 15:30:27.558 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 15:30:27.558 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2609 ms
+2025-05-15 15:30:27.844 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 15:30:28.070 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@5cc3e49b
+2025-05-15 15:30:28.072 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 15:30:28.176 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: Unable to generate rollback file.
+2025-05-15 15:30:28.176 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 15:30:28.178 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 15:30:28.180 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 15:30:28.195 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 15:30:28.213 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: Unable to generate rollback file.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.LiquibaseException: Unable to generate rollback file.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: Unable to generate rollback file.
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:306)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: \var\liquibase\rollback.sql
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:296)
+	... 26 common frames omitted
+2025-05-15 15:36:55.331 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 16960 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 15:36:55.332 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 15:36:55.333 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 15:36:56.026 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 15:36:56.074 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2025-05-15 15:36:56.978 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 15:36:56.988 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 15:36:56.988 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 15:36:57.100 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 15:36:57.101 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1699 ms
+2025-05-15 15:36:57.390 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 15:36:57.584 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@63f2e0b
+2025-05-15 15:36:57.586 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 15:36:57.822 [main] INFO  liquibase.command - Logging exception.
+2025-05-15 15:36:57.823 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-05-15 15:36:57.823 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ChangeLogParseException
+2025-05-15 15:36:57.823 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:36:57.823 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  4.31.1
+2025-05-15 15:36:57.824 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 15:36:58.415 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:36:58.415 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 15:36:58.418 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 15:36:58.420 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 15:36:58.433 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 15:36:58.450 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:953)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:929)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:904)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:303)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:98)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:125)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:124)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	... 38 common frames omitted
+Caused by: liquibase.exception.SetupException: The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:655)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNodeHelper(DatabaseChangeLog.java:477)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:462)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:429)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	... 44 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1110)
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:644)
+	... 48 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file db/changelog/db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1071)
+	... 49 common frames omitted
+2025-05-15 15:48:40.933 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 46952 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 15:48:40.935 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 15:48:40.936 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 15:48:41.641 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 15:48:41.686 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2025-05-15 15:48:42.592 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 15:48:42.600 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 15:48:42.601 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 15:48:42.719 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 15:48:42.719 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1705 ms
+2025-05-15 15:48:42.992 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 15:48:43.172 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@44384b4a
+2025-05-15 15:48:43.174 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 15:48:43.405 [main] INFO  liquibase.command - Logging exception.
+2025-05-15 15:48:43.406 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-05-15 15:48:43.406 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ChangeLogParseException
+2025-05-15 15:48:43.406 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:48:43.406 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  4.31.1
+2025-05-15 15:48:43.406 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 15:48:43.968 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:48:43.969 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 15:48:43.971 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 15:48:43.975 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 15:48:43.992 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 15:48:44.010 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:953)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:929)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:904)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:303)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:98)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:125)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:124)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	... 38 common frames omitted
+Caused by: liquibase.exception.SetupException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:655)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNodeHelper(DatabaseChangeLog.java:477)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:462)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:429)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	... 44 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1110)
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:644)
+	... 48 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1071)
+	... 49 common frames omitted
+2025-05-15 15:50:35.627 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 33656 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 15:50:35.629 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 15:50:35.630 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 15:50:36.351 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 15:50:36.397 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2025-05-15 15:50:37.302 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 15:50:37.311 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 15:50:37.311 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 15:50:37.433 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 15:50:37.433 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1728 ms
+2025-05-15 15:50:37.704 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 15:50:37.893 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@7bec8cb0
+2025-05-15 15:50:37.895 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 15:50:38.121 [main] INFO  liquibase.command - Logging exception.
+2025-05-15 15:50:38.121 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-05-15 15:50:38.121 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ChangeLogParseException
+2025-05-15 15:50:38.122 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:50:38.122 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  4.31.1
+2025-05-15 15:50:38.122 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 15:50:38.820 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:50:38.820 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 15:50:38.823 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 15:50:38.828 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 15:50:38.843 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 15:50:38.861 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:953)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:929)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:904)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:303)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:98)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:125)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:124)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	... 38 common frames omitted
+Caused by: liquibase.exception.SetupException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:655)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNodeHelper(DatabaseChangeLog.java:477)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:462)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:429)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	... 44 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1110)
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:644)
+	... 48 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1071)
+	... 49 common frames omitted
+2025-05-15 15:59:26.761 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 54248 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 15:59:26.762 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 15:59:26.762 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 15:59:27.557 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 15:59:27.610 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2025-05-15 15:59:28.641 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 15:59:28.653 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 15:59:28.653 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 15:59:28.784 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 15:59:28.785 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1953 ms
+2025-05-15 15:59:29.141 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 15:59:29.400 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@5cc3e49b
+2025-05-15 15:59:29.401 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 15:59:29.676 [main] INFO  liquibase.command - Logging exception.
+2025-05-15 15:59:29.677 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-05-15 15:59:29.677 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ChangeLogParseException
+2025-05-15 15:59:29.677 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:59:29.677 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  4.31.1
+2025-05-15 15:59:29.677 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 15:59:30.289 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+2025-05-15 15:59:30.290 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 15:59:30.294 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 15:59:30.298 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 15:59:30.318 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 15:59:30.341 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:953)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:929)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:904)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:303)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:98)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:125)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:124)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	... 38 common frames omitted
+Caused by: liquibase.exception.SetupException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:655)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNodeHelper(DatabaseChangeLog.java:477)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:462)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:429)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	... 44 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1110)
+	at liquibase.changelog.DatabaseChangeLog.handleInclude(DatabaseChangeLog.java:644)
+	... 48 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file db/changelog/v1.0-initial-schema.yaml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:1071)
+	... 49 common frames omitted
+2025-05-15 16:14:19.225 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 38072 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:14:19.227 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:14:19.227 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:14:20.021 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:14:20.079 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:14:20.976 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:14:20.986 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:14:20.986 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:14:21.106 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:14:21.106 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1799 ms
+2025-05-15 16:14:21.389 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:14:21.582 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@5cc3e49b
+2025-05-15 16:14:21.584 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:14:22.331 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:14:22.386 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:14:22.389 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:14:22.410 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:14:22.412 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:14:23.099 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:14:23.137 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:14:23.139 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:14:23.141 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:14:23.141 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:14:23.143 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:14:23.147 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:14:23.162 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:14:23.181 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:16:15.977 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 48372 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:16:15.978 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:16:15.979 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:16:16.841 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:16:16.904 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:16:17.791 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:16:17.800 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:16:17.801 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:16:17.934 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:16:17.934 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1881 ms
+2025-05-15 16:16:18.231 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:16:18.427 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@63f2e0b
+2025-05-15 16:16:18.428 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:16:19.063 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:16:19.110 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:16:19.112 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:16:19.134 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:16:19.136 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:16:19.778 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:16:19.799 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:16:19.799 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:16:19.801 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:16:19.801 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:16:19.804 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:16:19.807 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:16:19.825 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:16:19.848 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:17:25.130 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 49300 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:17:25.133 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:17:25.134 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:17:25.919 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:17:25.974 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:17:27.030 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:17:27.040 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:17:27.040 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:17:27.158 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:17:27.158 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1950 ms
+2025-05-15 16:17:27.492 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:17:27.690 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@1805383
+2025-05-15 16:17:27.694 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:17:28.357 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:17:28.412 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:17:28.414 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:17:28.434 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:17:28.435 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:17:29.166 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:17:29.190 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:17:29.191 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:17:29.192 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:17:29.193 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:17:29.196 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:17:29.200 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:17:29.221 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:17:29.242 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:17:47.788 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 45460 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:17:47.790 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:17:47.791 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:17:48.509 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:17:48.560 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:17:49.499 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:17:49.509 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:17:49.509 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:17:49.621 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:17:49.622 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1755 ms
+2025-05-15 16:17:49.905 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:17:50.104 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@7e58f697
+2025-05-15 16:17:50.107 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:17:50.746 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:17:50.793 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:17:50.794 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:17:50.814 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:17:50.815 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:17:51.300 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:17:51.319 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:17:51.320 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:17:51.322 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:17:51.322 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:17:51.324 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:17:51.327 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:17:51.350 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:17:51.367 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:23:54.433 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 49520 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:23:54.434 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:23:54.435 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:23:55.309 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:23:55.370 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:23:56.479 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:23:56.489 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:23:56.490 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:23:56.617 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:23:56.617 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2099 ms
+2025-05-15 16:23:56.944 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:23:57.198 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@1b4a3a1
+2025-05-15 16:23:57.201 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:23:57.957 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:23:58.008 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:23:58.009 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:23:58.030 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:23:58.031 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:23:58.848 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:23:58.881 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:23:58.881 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:23:58.882 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:23:58.884 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:23:58.886 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:23:58.891 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:23:58.906 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:23:58.929 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:34:27.300 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 53320 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:34:27.302 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:34:27.302 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:34:28.176 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:34:28.236 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:34:29.262 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:34:29.274 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:34:29.275 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:34:29.415 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:34:29.415 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2033 ms
+2025-05-15 16:34:29.770 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:34:30.010 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@738a815c
+2025-05-15 16:34:30.012 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:34:30.740 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:34:30.796 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:34:30.797 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:34:30.819 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:34:30.821 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:34:31.681 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:34:31.706 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:34:31.707 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:34:31.708 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:34:31.708 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:34:31.712 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:34:31.716 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:34:31.733 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:34:31.755 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:36:27.679 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 20920 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:36:27.680 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:36:27.682 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:36:28.376 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:36:28.429 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:36:29.318 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:36:29.327 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:36:29.327 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:36:29.460 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:36:29.460 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1711 ms
+2025-05-15 16:36:29.727 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:36:29.912 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@6481dce5
+2025-05-15 16:36:29.914 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:36:30.531 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:36:30.576 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:36:30.579 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:36:30.598 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:36:30.599 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:36:31.073 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:36:31.094 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:36:31.094 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:36:31.095 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:36:31.095 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:36:31.100 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:36:31.103 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:36:31.117 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:36:31.134 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:41:57.580 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 6532 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:41:57.582 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:41:57.584 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:41:58.558 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:41:58.608 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:41:59.514 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:41:59.533 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:41:59.533 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:41:59.669 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:41:59.670 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2013 ms
+2025-05-15 16:41:59.981 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Starting...
+2025-05-15 16:42:00.179 [main] INFO  com.zaxxer.hikari.pool.HikariPool - BankHikariPool - Added connection org.postgresql.jdbc.PgConnection@9f0fc36
+2025-05-15 16:42:00.181 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Start completed.
+2025-05-15 16:42:00.800 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:42:00.851 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-05-15 16:42:00.853 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:42:00.875 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-05-15 16:42:00.877 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:42:01.539 [main] INFO  liquibase.changelog - Reading from transfer.databasechangelog
+2025-05-15 16:42:01.562 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:42:01.563 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:42:01.564 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+2025-05-15 16:42:01.564 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown initiated...
+2025-05-15 16:42:01.567 [main] INFO  com.zaxxer.hikari.HikariDataSource - BankHikariPool - Shutdown completed.
+2025-05-15 16:42:01.571 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:42:01.587 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:42:01.604 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org/apache/commons/lang3/SystemProperties
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/lang3/SystemProperties
+	at liquibase.report.RuntimeInfo.<init>(RuntimeInfo.java:11)
+	at liquibase.report.UpdateReportParameters.<init>(UpdateReportParameters.java:15)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:68)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.Liquibase.update(Liquibase.java:380)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.initialUpdate(UpdateTestingRollbackCommandStep.java:75)
+	at liquibase.command.core.UpdateTestingRollbackCommandStep.run(UpdateTestingRollbackCommandStep.java:56)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Liquibase.lambda$updateTestingRollback$20(Liquibase.java:1051)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1042)
+	at liquibase.Liquibase.updateTestingRollback(Liquibase.java:1036)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:320)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.SystemProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 58 common frames omitted
+2025-05-15 16:47:56.253 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 37544 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:47:56.255 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:47:56.256 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:47:57.013 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:47:57.061 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:47:57.996 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:47:58.005 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:47:58.006 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:47:58.120 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:47:58.120 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1789 ms
+2025-05-15 16:47:58.405 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-15 16:47:58.588 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@79d63a4f
+2025-05-15 16:47:58.589 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-15 16:47:58.930 [main] INFO  liquibase.command - Logging exception.
+2025-05-15 16:47:58.931 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-05-15 16:47:58.931 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ParsedNodeException
+2025-05-15 16:47:58.931 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+2025-05-15 16:47:58.931 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  PostgreSQL 17.4
+2025-05-15 16:47:58.931 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:47:59.404 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+2025-05-15 16:47:59.404 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-15 16:47:59.430 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-15 16:47:59.432 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:47:59.445 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:47:59.462 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:953)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:929)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:904)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:303)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:98)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:125)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:124)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	... 38 common frames omitted
+Caused by: liquibase.parser.core.ParsedNodeException: Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.changelog.ChangeSet.toChange(ChangeSet.java:633)
+	at liquibase.changelog.ChangeSet.handleChildNode(ChangeSet.java:559)
+	at liquibase.changelog.ChangeSet.handleChildNode(ChangeSet.java:555)
+	at liquibase.changelog.ChangeSet.load(ChangeSet.java:482)
+	at liquibase.changelog.DatabaseChangeLog.createChangeSet(DatabaseChangeLog.java:1200)
+	at liquibase.changelog.DatabaseChangeLog.handleDbmsAttribute(DatabaseChangeLog.java:680)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNodeHelper(DatabaseChangeLog.java:471)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:462)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:429)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	... 44 common frames omitted
+2025-05-15 16:53:50.688 [main] INFO  c.example.test.bank.BankApplication - Starting BankApplication using Java 23.0.2 with PID 63648 (C:\Users\Asus TUF\IdeaProjects\bank\target\classes started by Asus TUF in C:\Users\Asus TUF\IdeaProjects\bank)
+2025-05-15 16:53:50.690 [main] DEBUG c.example.test.bank.BankApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-05-15 16:53:50.691 [main] INFO  c.example.test.bank.BankApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-15 16:53:51.378 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-15 16:53:51.427 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2025-05-15 16:53:52.314 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8093 (http)
+2025-05-15 16:53:52.324 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-15 16:53:52.324 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-05-15 16:53:52.439 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-05-15 16:53:52.439 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1679 ms
+2025-05-15 16:53:52.702 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-15 16:53:52.883 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e2b3026
+2025-05-15 16:53:52.885 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-15 16:53:53.222 [main] INFO  liquibase.command - Logging exception.
+2025-05-15 16:53:53.224 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-05-15 16:53:53.224 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ParsedNodeException
+2025-05-15 16:53:53.224 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+2025-05-15 16:53:53.224 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  PostgreSQL 17.4
+2025-05-15 16:53:53.224 [main] INFO  liquibase.command - Command execution complete
+2025-05-15 16:53:53.844 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+2025-05-15 16:53:53.845 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-15 16:53:53.905 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-15 16:53:53.908 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-15 16:53:53.921 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-15 16:53:53.937 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.test.bank.BankApplication.main(BankApplication.java:13)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.CommandScope.execute(CommandScope.java:241)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:953)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:929)
+	at liquibase.Liquibase.futureRollbackSQL(Liquibase.java:904)
+	at liquibase.integration.spring.SpringLiquibase.generateRollbackFile(SpringLiquibase.java:303)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:277)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 20 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yaml : Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:98)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:125)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:124)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253)
+	... 38 common frames omitted
+Caused by: liquibase.parser.core.ParsedNodeException: Error parsing db/changelog/db.changelog-master.yaml: Unknown change type 'include'. Check for spelling or capitalization errors and missing extensions such as liquibase-commercial.
+	at liquibase.changelog.ChangeSet.toChange(ChangeSet.java:633)
+	at liquibase.changelog.ChangeSet.handleChildNode(ChangeSet.java:559)
+	at liquibase.changelog.ChangeSet.handleChildNode(ChangeSet.java:555)
+	at liquibase.changelog.ChangeSet.load(ChangeSet.java:482)
+	at liquibase.changelog.DatabaseChangeLog.createChangeSet(DatabaseChangeLog.java:1200)
+	at liquibase.changelog.DatabaseChangeLog.handleDbmsAttribute(DatabaseChangeLog.java:680)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNodeHelper(DatabaseChangeLog.java:471)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:462)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:429)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	... 44 common frames omitted

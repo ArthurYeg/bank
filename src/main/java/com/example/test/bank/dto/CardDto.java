@@ -4,14 +4,16 @@ import java.math.BigDecimal;
 
 public class CardDto {
     private Long id;
+    private String userId;
     private String cardNumber;
     private String cardHolderName;
     private String expiryDate;
     private BigDecimal balance;
     private String status;
-    private String cvv; // Add this field
+    private String cvv;
 
-    // Constructor
+
+
     public CardDto(Long id, String cardNumber, String cardHolderName, String expiryDate, BigDecimal balance, String status, String cvv) {
         this.id = id;
         this.cardNumber = cardNumber;
@@ -19,13 +21,11 @@ public class CardDto {
         this.expiryDate = expiryDate;
         this.balance = balance;
         this.status = status;
-        this.cvv = cvv; // Initialize the cvv field
+        this.cvv = cvv;
     }
 
-    // Default constructor
     public CardDto() {}
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -75,10 +75,17 @@ public class CardDto {
     }
 
     public String getCvv() {
-        return cvv; // Getter for cvv
+        return cvv;
     }
 
     public void setCvv(String cvv) {
-        this.cvv = cvv; // Setter for cvv
+        this.cvv = cvv;
+    }
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

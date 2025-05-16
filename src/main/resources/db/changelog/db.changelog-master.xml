@@ -13,7 +13,7 @@
             <column name="email" type="VARCHAR(255)">
                 <constraints unique="true" nullable="false"/>
             </column>
-            <!-- остальные колонки -->
+            <!-- другие колонки -->
         </createTable>
 
         <createTable tableName="cards">
@@ -23,7 +23,7 @@
             <column name="card_number" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <!-- остальные колонки -->
         </createTable>
     </changeSet>
+
 </databaseChangeLog>

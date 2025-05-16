@@ -65,6 +65,11 @@ public class User implements UserDetails {
         this.roles.add(role);
         this.active = (active != null) ? active : true;
     }
+
+    public User(String userId) {
+
+    }
+
     public void addRole(Role role) {
         this.roles.add(role);
     }

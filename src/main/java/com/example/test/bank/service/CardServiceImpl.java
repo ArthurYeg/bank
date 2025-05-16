@@ -1,14 +1,22 @@
 package com.example.test.bank.service;
 
+import com.example.test.bank.dto.CardDto;
+import com.example.test.bank.dto.CardFilterRequestDto;
+import com.example.test.bank.dto.CardResponseDto;
+import com.example.test.bank.dto.CreateCardRequestDto;
+import com.example.test.bank.dto.TransferRequestDto;
 import com.example.test.bank.exception.CardNotFoundException;
 import com.example.test.bank.model.Card;
 import com.example.test.bank.repository.CardRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class CardServiceImpl {
+public class CardServiceImpl implements CardService{
 
     private final CardRepository cardRepository;
 
@@ -28,7 +36,51 @@ public class CardServiceImpl {
     public Card updateCard(Long id, Card cardDetails) {
         Card card = getCardById(id);
         card.setBalance(cardDetails.getBalance());
-        // обновите другие поля, если это необходимо
         return cardRepository.save(card);
+    }
+
+    @Override
+    public Page<CardResponseDto> getAllCards(CardFilterRequestDto filter, Pageable pageable, UserDetails userDetails) {
+        return null;
+    }
+
+    @Override
+    public CardResponseDto createCard(CreateCardRequestDto request, UserDetails userDetails) {
+        return null;
+    }
+
+    @Override
+    public CardDto createCard(CreateCardRequestDto request) {
+        return null;
+    }
+
+    @Override
+    public CardResponseDto blockCard(Long cardId, UserDetails userDetails) {
+        return null;
+    }
+
+    @Override
+    public void transfer(TransferRequestDto request, UserDetails userDetails) {
+
+    }
+
+    @Override
+    public Card getCard(long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteCard(long id) {
+
+    }
+
+    @Override
+    public Card getCard(Long cardId) {
+        return null;
+    }
+
+    @Override
+    public CardDto mapToDto(Card card) {
+        return null;
     }
 }

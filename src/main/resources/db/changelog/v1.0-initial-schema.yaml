@@ -1,0 +1,16 @@
+- changeSet:
+    id: 1
+    author: bank-app
+    changes:
+      - createTable:
+          tableName: card
+          columns:
+            - column:
+                name: id
+                type: BIGINT
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+            - column:
+                name: status
+                type: VARCHAR(255)

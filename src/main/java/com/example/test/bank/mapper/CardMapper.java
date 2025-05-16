@@ -11,20 +11,11 @@ import org.mapstruct.Named;
 
 @Mapper(componentModel = "spring")
 public interface CardMapper {
+    @Mapping(source = "userId", target = "user")
+    Card toEntity(CardDto cardDto);
 
-
-    @Mapping(target = "cardNumber", source = "cardNumber", qualifiedByName = "maskCardNumber")
-    @Mapping(target = "cardHolderName", expression = "java(mapUserToFullName(card.getUser()))")
-    CardDto toDto(Card card);
-
-    @Named("maskCardNumber")
-    static String maskCardNumber(String cardNumber) {
-        return CardNumberMasker.mask(cardNumber);
+    default User mapUserIdToUser(String userId) {
+        if (userId == null) return null;
+        return new User(userId);
     }
-
-    default String mapUserToFullName(User user) {
-        return user != null ? user.getFirstName() + " " + user.getLastName() : null;
-    }
-
-    CardResponseDto toResponse(Card card);
 }
