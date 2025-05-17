@@ -1,5 +1,6 @@
 package com.example.test.bank.service;
 
+import com.example.test.bank.dto.BalanceResponseDto;
 import com.example.test.bank.dto.CardDto;
 import com.example.test.bank.dto.CardFilterRequestDto;
 import com.example.test.bank.dto.CardResponseDto;
@@ -75,12 +76,47 @@ public class CardServiceImpl implements CardService{
     }
 
     @Override
+    public void deleteCard(Long cardId, UserDetails userDetails) {
+
+    }
+
+    @Override
     public Card getCard(Long cardId) {
         return null;
     }
 
     @Override
     public CardDto mapToDto(Card card) {
+        return null;
+    }
+
+    @Override
+    public CardResponseDto activateCard(Long cardId, UserDetails userDetails) {
+        return null;
+    }
+
+    @Override
+    public void transferBetweenOwnCards(TransferRequestDto request, UserDetails userDetails) {
+
+    }
+
+    @Override
+    public BalanceResponseDto getCardBalance(Long cardId, UserDetails userDetails) {
+        return null;
+    }
+
+    @Override
+    public Page<CardResponseDto> getUserCards(CardFilterRequestDto filter, Pageable pageable, UserDetails userDetails) {
+        return null;
+    }
+
+    @Override
+    public void requestCardBlock(Long cardId, UserDetails userDetails) {
+
+    }
+
+    @Override
+    public Page<CardResponseDto> getFilteredCards(CardFilterRequestDto filter, Pageable pageable, UserDetails userDetails) {
         return null;
     }
 }

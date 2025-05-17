@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.19.xsd">
+<changeSet id="v1.1" author="your_name">
+    <preConditions>
+        <tableExists tableName="card"/>
+        <columnExists tableName="card" columnName="status"/>
+    </preConditions>
 
-    <changeSet id="v1.1" author="your_name">
-        <modifyDataType
-                tableName="card"
-                columnName="status"
-                newDataType="VARCHAR(255)"
-        />
-    </changeSet>
+    <dropColumn tableName="card" columnName="status"/>
 
-</databaseChangeLog>
+    <addColumn tableName="card">
+        <column name="status" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+    </addColumn>
+</changeSet>

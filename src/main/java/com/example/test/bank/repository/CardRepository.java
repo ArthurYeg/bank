@@ -1,6 +1,5 @@
 package com.example.test.bank.repository;
 
-import com.example.test.bank.model.BankCard;
 import com.example.test.bank.model.Card;
 import com.example.test.bank.model.CardStatus;
 import org.springframework.data.domain.Page;

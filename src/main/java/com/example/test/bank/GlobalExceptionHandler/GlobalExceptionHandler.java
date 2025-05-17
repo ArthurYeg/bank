@@ -1,8 +1,11 @@
 package com.example.test.bank.exception;
 
+import com.example.test.bank.dto.ErrorResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -10,6 +13,7 @@ import org.springframework.web.context.request.WebRequest;
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -63,4 +67,42 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(body, HttpStatus.FORBIDDEN);
     }
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = ex.getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .collect(Collectors.toMap(
+                        FieldError::getField,
+                        e -> e.getDefaultMessage() != null ? e.getDefaultMessage() : "Validation error"
+                ));
+
+        return ResponseEntity.badRequest().body(new ErrorResponse(
+                LocalDateTime.now(),
+                HttpStatus.BAD_REQUEST.value(),
+                "Validation failed",
+                "Invalid request parameters",
+                errors
+        ));
+    }
+
+    @ExceptionHandler({
+            InsufficientFundsException.class,
+            SameCardTransferException.class,
+            CardNotFoundException.class
+    })
+    public ResponseEntity<ErrorResponse> handleBusinessExceptions(RuntimeException ex) {
+        HttpStatus status = ex instanceof CardNotFoundException
+                ? HttpStatus.NOT_FOUND
+                : HttpStatus.CONFLICT;
+
+        return ResponseEntity.status(status).body(new ErrorResponse(
+                LocalDateTime.now(),
+                status.value(),
+                status.getReasonPhrase(),
+                ex.getMessage(),
+                null
+        ));
+    }
 }
+

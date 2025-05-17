@@ -25,5 +25,5 @@
             </column>
         </createTable>
     </changeSet>
-
+    <include file="db/changelog/changes/v1.1__alter_card_status_type.xml"/>
 </databaseChangeLog>
